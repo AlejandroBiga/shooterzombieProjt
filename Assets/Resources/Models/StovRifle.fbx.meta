@@ -513,7 +513,7 @@ ModelImporter:
       curves: []
       events:
       - time: 0.558952
-        functionName: DrawAKOn
+        functionName: DesenfundarOn
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
@@ -578,21 +578,21 @@ ModelImporter:
       curves: []
       events:
       - time: 0.14410481
-        functionName: GunAKChargerOUT
+        functionName: CartuchoSaleOn
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.44541484
-        functionName: GunAkChrgerIN
+        functionName: CartuchoEntraOn
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.7685589
-        functionName: ReloadAKfinish
+        functionName: VacioOn
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
