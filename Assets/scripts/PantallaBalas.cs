@@ -16,7 +16,7 @@ public class PantallaBalas : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        texto.text = logicaArma.balasEnCartucho + "/" + logicaArma.tamañoDeCartcho
+        texto.text = logicaArma.balasEnCartucho + "/" + logicaArma.tamañoDeCartucho
                    + "\n" + logicaArma.balasRestantes;
 
 

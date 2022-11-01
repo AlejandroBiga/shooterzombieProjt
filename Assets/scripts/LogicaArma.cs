@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,20 +6,22 @@ public enum ModoDeDisparo
 {
     SemiAuto,
     FullAuto
-
 }
 
-public class LogicaArma : MonoBehaviour
-{
+public class LogicaArma : MonoBehaviour {
     protected Animator animator;
     protected AudioSource audioSource;
+    //parte 2:
+    public Camera camaraPrincipal;
+    //
     public bool tiempoNoDisparo = false;
     public bool puedeDisparar = false;
     public bool recargando = false;
-
+    //parte 2:
+    public bool estaADS = false;
+    //
     [Header("Referencia de Objetos")]
     public ParticleSystem fuegoDeArma;
-    public Camera camaraPrincipal;
 
     [Header("Referencia de Sonidos")]
     public AudioClip SonDisparo;
@@ -31,39 +33,38 @@ public class LogicaArma : MonoBehaviour
 
     [Header("Atributos de Arma")]
     public ModoDeDisparo modoDeDisparo = ModoDeDisparo.FullAuto;
-    public float da�o = 20f;
+    public float daño = 20f;
     public float ritmoDeDisparo = 0.3f;
     public int balasRestantes;
     public int balasEnCartucho;
-    public int tama�oDeCartcho = 12;
+    public int tamañoDeCartucho = 12;
     public int maximoDeBalas = 100;
-    public bool estaADS = false;
+    //parte 2:
     public Vector3 disCadera;
     public Vector3 ADS;
     public float tiempoApuntar;
     public float zoom;
     public float normal;
+    //0 -0.748 -0.19
 
     // Use this for initialization
-    void Start()
-    {
+    void Start () {
         audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
 
-        balasEnCartucho = tama�oDeCartcho;
+        balasEnCartucho = tamañoDeCartucho;
         balasRestantes = maximoDeBalas;
 
-        Invoke("HabilitarArmar", 0.5f);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (modoDeDisparo == ModoDeDisparo.FullAuto && Input.GetButton("Fire1"))
+        Invoke("HabilitarArmar", 0.5F);
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		if(modoDeDisparo== ModoDeDisparo.FullAuto && Input.GetButton("Fire1"))
         {
             RevisarDisparo();
         }
-        else if (modoDeDisparo == ModoDeDisparo.SemiAuto && Input.GetButtonDown("Fire1"))
+        else if(modoDeDisparo == ModoDeDisparo.SemiAuto && Input.GetButtonDown("Fire1"))
         {
             RevisarDisparo();
         }
@@ -72,26 +73,29 @@ public class LogicaArma : MonoBehaviour
         {
             RevisarRecargar();
         }
-
+        //parte 2:
         if (Input.GetMouseButton(1))
         {
-            transform.localPosition = Vector3.Slerp(transform.localPosition, ADS, tiempoApuntar * Time.deltaTime);
-            estaADS= true;
-            camaraPrincipal.fieldOfView = Mathf.Lerp(camaraPrincipal.fieldOfView, zoom, tiempoApuntar * Time.deltaTime);
+            transform.localPosition = Vector3.Slerp(transform.localPosition,ADS,tiempoApuntar*Time.deltaTime);
+            estaADS = true;
+            camaraPrincipal.fieldOfView= Mathf.Lerp(camaraPrincipal.fieldOfView, zoom, tiempoApuntar * Time.deltaTime);
+            
+            
         }
 
         if (Input.GetMouseButtonUp(1))
         {
             estaADS = false;
+
         }
 
-        if(estaADS== false)
+        if (estaADS == false)
         {
             transform.localPosition = Vector3.Slerp(transform.localPosition, disCadera, tiempoApuntar * Time.deltaTime);
             camaraPrincipal.fieldOfView = Mathf.Lerp(camaraPrincipal.fieldOfView, normal, tiempoApuntar * Time.deltaTime);
         }
 
-        
+        //...
     }
 
     void HabilitarArmar()
@@ -127,9 +131,8 @@ public class LogicaArma : MonoBehaviour
 
     public virtual void ReproducirAnimacionDisparo()
     {
-        if (gameObject.name == "Police9mm")
-        {
-            if (balasEnCartucho > 1)
+        if(gameObject.name== "Police9mm"){
+            if(balasEnCartucho > 1)
             {
                 animator.CrossFadeInFixedTime("Fire", 0.1f);
             }
@@ -142,7 +145,7 @@ public class LogicaArma : MonoBehaviour
         {
             animator.CrossFadeInFixedTime("Fire", 0.1f);
         }
-
+        
     }
 
     void SinBalas()
@@ -160,7 +163,7 @@ public class LogicaArma : MonoBehaviour
 
     void RevisarRecargar()
     {
-        if (balasRestantes > 0 && balasEnCartucho < tama�oDeCartcho)
+        if(balasRestantes>0 && balasEnCartucho < tamañoDeCartucho)
         {
             Recargar();
         }
@@ -175,7 +178,7 @@ public class LogicaArma : MonoBehaviour
 
     void RecargarMuniciones()
     {
-        int balasParaRecargar = tama�oDeCartcho - balasEnCartucho;
+        int balasParaRecargar = tamañoDeCartucho - balasEnCartucho;
         int restarBalas = (balasRestantes >= balasParaRecargar) ? balasParaRecargar : balasRestantes;
 
         balasRestantes -= restarBalas;
@@ -196,7 +199,7 @@ public class LogicaArma : MonoBehaviour
     public void CartuchoSaleOn()
     {
         audioSource.PlayOneShot(SonCartuchoSale);
-        RecargarMuniciones();
+        
     }
 
     public void VacioOn()

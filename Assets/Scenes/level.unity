@@ -313,11 +313,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57ee0c4d97d56bc4784114fccdfb91c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camaraPrincipal: {fileID: 177915021}
   tiempoNoDisparo: 0
   puedeDisparar: 0
   recargando: 0
+  estaADS: 0
   fuegoDeArma: {fileID: 100518371}
-  camaraPrincipal: {fileID: 177915021}
   SonDisparo: {fileID: 8300000, guid: 4ba9bafda0e84cf4e8e2012ae9a60e56, type: 3}
   SonSinBalas: {fileID: 8300000, guid: 678e850f1ee5e5946b54d35863c38e55, type: 3}
   SonCartuchoEntra: {fileID: 8300000, guid: e589257cb9eedf74a8e505318a6e7f98, type: 3}
@@ -326,14 +327,13 @@ MonoBehaviour:
   SonDesenfundar: {fileID: 8300000, guid: d0970c5f59abe8344bb56c7fc8f2f107, type: 3}
   modoDeDisparo: 0
   "da\xF1o": 20
-  ritmoDeDisparo: 0.2
+  ritmoDeDisparo: 0.3
   balasRestantes: 0
   balasEnCartucho: 0
-  "tama\xF1oDeCartcho": 12
-  maximoDeBalas: 36
-  estaADS: 0
-  disCadera: {x: 0.11, y: -0.79, z: 0.1}
-  ADS: {x: -0.0008, y: -0.729, z: 0.1}
+  "tama\xF1oDeCartucho": 10
+  maximoDeBalas: 30
+  disCadera: {x: 0.11, y: -0.79, z: 0.09999982}
+  ADS: {x: 0, y: -0.731, z: 0.1}
   tiempoApuntar: 7
   zoom: 40
   normal: 60
@@ -4049,7 +4049,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 20}
+  m_SizeDelta: {x: 15, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &787952758
 MonoBehaviour:
@@ -5081,11 +5081,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57ee0c4d97d56bc4784114fccdfb91c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camaraPrincipal: {fileID: 177915021}
   tiempoNoDisparo: 0
   puedeDisparar: 0
   recargando: 0
+  estaADS: 0
   fuegoDeArma: {fileID: 1800170053}
-  camaraPrincipal: {fileID: 177915021}
   SonDisparo: {fileID: 8300000, guid: 319d9bc4735bd6e4dbd2a91d6bf14a34, type: 3}
   SonSinBalas: {fileID: 8300000, guid: 678e850f1ee5e5946b54d35863c38e55, type: 3}
   SonCartuchoEntra: {fileID: 8300000, guid: e589257cb9eedf74a8e505318a6e7f98, type: 3}
@@ -5093,16 +5094,15 @@ MonoBehaviour:
   SonVacio: {fileID: 8300000, guid: 7dbad30ab37cdaf41a027a3fbee320e2, type: 3}
   SonDesenfundar: {fileID: 8300000, guid: a556142d6c3623f41b7d9bdecb3ac66d, type: 3}
   modoDeDisparo: 1
-  "da\xF1o": 12
+  "da\xF1o": 15
   ritmoDeDisparo: 0.1
   balasRestantes: 0
   balasEnCartucho: 0
-  "tama\xF1oDeCartcho": 30
+  "tama\xF1oDeCartucho": 30
   maximoDeBalas: 60
-  estaADS: 0
-  disCadera: {x: 0.11, y: -0.79, z: 0.1}
-  ADS: {x: 0, y: -0.687, z: 0.1}
-  tiempoApuntar: 6
+  disCadera: {x: 0.11, y: -0.79, z: 0.09999982}
+  ADS: {x: 0, y: -0.697, z: 0.1}
+  tiempoApuntar: 8
   zoom: 40
   normal: 60
 --- !u!114 &1051095087
@@ -6639,7 +6639,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: cda62c486770efb46b8a593047db73be, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: cda62c486770efb46b8a593047db73be, type: 3}
       propertyPath: m_Layer
