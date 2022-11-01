@@ -19,6 +19,7 @@ public class LogicaArma : MonoBehaviour
 
     [Header("Referencia de Objetos")]
     public ParticleSystem fuegoDeArma;
+    public Camera camaraPrincipal;
 
     [Header("Referencia de Sonidos")]
     public AudioClip SonDisparo;
@@ -36,6 +37,12 @@ public class LogicaArma : MonoBehaviour
     public int balasEnCartucho;
     public int tamañoDeCartcho = 12;
     public int maximoDeBalas = 100;
+    public bool estaADS = false;
+    public Vector3 disCadera;
+    public Vector3 ADS;
+    public float tiempoApuntar;
+    public float zoom;
+    public float normal;
 
     // Use this for initialization
     void Start()
@@ -65,6 +72,26 @@ public class LogicaArma : MonoBehaviour
         {
             RevisarRecargar();
         }
+
+        if (Input.GetMouseButton(1))
+        {
+            transform.localPosition = Vector3.Slerp(transform.localPosition, ADS, tiempoApuntar * Time.deltaTime);
+            estaADS= true;
+            camaraPrincipal.fieldOfView = Mathf.Lerp(camaraPrincipal.fieldOfView, zoom, tiempoApuntar * Time.deltaTime);
+        }
+
+        if (Input.GetMouseButtonUp(1))
+        {
+            estaADS = false;
+        }
+
+        if(estaADS== false)
+        {
+            transform.localPosition = Vector3.Slerp(transform.localPosition, disCadera, tiempoApuntar * Time.deltaTime);
+            camaraPrincipal.fieldOfView = Mathf.Lerp(camaraPrincipal.fieldOfView, normal, tiempoApuntar * Time.deltaTime);
+        }
+
+        
     }
 
     void HabilitarArmar()
