@@ -77,7 +77,7 @@ public class LogicaEnemigo : MonoBehaviour
             agente.isStopped = true;
             collider.enabled = false;
             animator.CrossFadeInFixedTime("Vida0", 0.1f);
-            Destroy(gameObject, 3f);
+            Destroy(gameObject, 5f);
 
         }
     }

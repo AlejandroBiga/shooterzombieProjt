@@ -318,6 +318,7 @@ MonoBehaviour:
   recargando: 0
   fuegoDeArma: {fileID: 100518371}
   camaraPrincipal: {fileID: 1120236294}
+  puntoDeDisparo: {fileID: 1888905691}
   SonDisparo: {fileID: 8300000, guid: 4ba9bafda0e84cf4e8e2012ae9a60e56, type: 3}
   SonSinBalas: {fileID: 8300000, guid: 678e850f1ee5e5946b54d35863c38e55, type: 3}
   SonCartuchoEntra: {fileID: 8300000, guid: e589257cb9eedf74a8e505318a6e7f98, type: 3}
@@ -3803,7 +3804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 436fdf58562f548409453a282fc241d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valor: 100
+  valor: 50
 --- !u!114 &748024880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4670,6 +4671,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: zombie1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 165698eac7ca81041ad603fc5a3afa55, type: 3}
+      propertyPath: m_TagString
+      value: Enemigo
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 165698eac7ca81041ad603fc5a3afa55, type: 3}
 --- !u!1001 &957968423
@@ -5145,6 +5150,7 @@ MonoBehaviour:
   recargando: 0
   fuegoDeArma: {fileID: 1800170053}
   camaraPrincipal: {fileID: 1120236294}
+  puntoDeDisparo: {fileID: 1888905691}
   SonDisparo: {fileID: 8300000, guid: 319d9bc4735bd6e4dbd2a91d6bf14a34, type: 3}
   SonSinBalas: {fileID: 8300000, guid: 678e850f1ee5e5946b54d35863c38e55, type: 3}
   SonCartuchoEntra: {fileID: 8300000, guid: e589257cb9eedf74a8e505318a6e7f98, type: 3}
@@ -9202,6 +9208,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000013152806056, guid: 7d3f5ccb558e7df4da8169755570ff76, type: 3}
   m_PrefabInstance: {fileID: 1884301089}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1888905690
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1888905691}
+  m_Layer: 0
+  m_Name: PuntoDeDisparo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1888905691
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888905690}
+  m_LocalRotation: {x: -0, y: 0.044592377, z: -0, w: 0.9990053}
+  m_LocalPosition: {x: 0.09000033, y: 0, z: 0.00000008195639}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 138738550}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 5.112, z: 0}
 --- !u!1001 &1910398242
 PrefabInstance:
   m_ObjectHideFlags: 0
