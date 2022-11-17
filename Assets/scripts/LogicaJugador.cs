@@ -19,6 +19,7 @@ public class LogicaJugador : MonoBehaviour
     void Update()
     {
         RevisarVida();
+
     }
 
     void RevisarVida()
@@ -27,11 +28,10 @@ public class LogicaJugador : MonoBehaviour
         if(vida.valor <= 0)
         {
             Vida0 = true;
+
+            SceneManager.LoadScene(2);
         }
     }
     // cambiar esto en un futuro por pantalla de muerte
-    void ReiniciarJuego()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
+    
 }
