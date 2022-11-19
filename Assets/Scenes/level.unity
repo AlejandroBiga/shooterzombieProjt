@@ -445,6 +445,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jugador
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
+      propertyPath: m_TagString
+      value: Jugador
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -4252,6 +4256,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9193091905229099719, guid: 5a826e1a9f9a0a74fbf63d825c3e464a, type: 3}
   m_PrefabInstance: {fileID: 1594562554}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &825704798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825704797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6839ff516ad74cf409d0fd47248e0c25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &825704799
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4263,8 +4279,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.4288023, y: 1, z: 5.813618}
-  m_Center: {x: 0.0362701, y: 0, z: -0.13421556}
+  m_Size: {x: 3.5844061, y: 1, z: 5.813618}
+  m_Center: {x: 0.61407125, y: 0, z: -0.13421543}
 --- !u!4 &869367238 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000010409153280, guid: 3228a22491941734bb83ad691d17fcb9, type: 3}
@@ -7952,6 +7968,10 @@ PrefabInstance:
     - target: {fileID: 9193091905229099719, guid: 5a826e1a9f9a0a74fbf63d825c3e464a, type: 3}
       propertyPath: m_Name
       value: Car2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9193091905229099719, guid: 5a826e1a9f9a0a74fbf63d825c3e464a, type: 3}
+      propertyPath: m_TagString
+      value: meta
       objectReference: {fileID: 0}
     - target: {fileID: 9193091905229197031, guid: 5a826e1a9f9a0a74fbf63d825c3e464a, type: 3}
       propertyPath: m_RootOrder

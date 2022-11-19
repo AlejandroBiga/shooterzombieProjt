@@ -13,6 +13,10 @@ public class ControladorScenas : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
     }
 
+
+    
+
+
     public void Play()
     {
         SceneManager.LoadScene(1);
