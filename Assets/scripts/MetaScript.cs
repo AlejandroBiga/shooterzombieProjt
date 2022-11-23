@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 public class MetaScript : MonoBehaviour
 {
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Jugador"))
+        if (other.gameObject.CompareTag("Jugador"))
         {
             SceneManager.LoadScene(3);
         }
