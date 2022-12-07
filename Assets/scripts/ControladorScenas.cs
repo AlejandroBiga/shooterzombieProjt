@@ -22,6 +22,11 @@ public class ControladorScenas : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    public void Options()
+    {
+        SceneManager.LoadScene(4);
+    }
+
     public void GoToMenu()
     {
         SceneManager.LoadScene(0);
